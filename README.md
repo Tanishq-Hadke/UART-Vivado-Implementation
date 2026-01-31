@@ -1,4 +1,3 @@
-```markdown
 # UART Protocol Implementation using Vivado (Verilog)
 
 This repository contains a complete **UART (Universal Asynchronous Receiver Transmitter)** implementation designed using **Verilog HDL** and developed in **Xilinx Vivado**.  
@@ -19,29 +18,6 @@ The project includes baud rate generation, UART transmitter, and UART receiver m
 - FPGA-ready implementation
 
 ---
-
-## 📁 Project Structure
-
-```
-
-UART-Protocol-Vivado-Verilog/
-│
-├── src/
-│   ├── baud_rate_generator.v
-│   ├── uart_tx.v
-│   ├── uart_rx.v
-│   └── uart_top.v
-│
-├── sim/
-│   └── uart_tb.v
-│
-├── constraints/
-│   └── uart.xdc
-│
-├── README.md
-└── LICENSE
-
-```
 
 ---
 
@@ -73,22 +49,6 @@ Common baud rates:
 
 ## 🧮 Baud Rate Calculation
 
-```
-
-Baud Divider = System Clock Frequency / Desired Baud Rate
-
-```
-
-### Example
-
-```
-
-System Clock = 100 MHz
-Baud Rate = 9600
-
-Baud Divider = 100,000,000 / 9600 ≈ 10416
-
-```
 
 This divider value is used in the baud rate generator module.
 
@@ -189,14 +149,6 @@ Receives serial UART data and reconstructs 8-bit parallel data.
 
 ---
 
-## 🔗 UART Timing Format
-
-```
-
-Idle ─┐
-└─ Start ─ D0 ─ D1 ─ D2 ─ D3 ─ D4 ─ D5 ─ D6 ─ D7 ─ Stop ─ Idle
-
-```
 
 ---
 
@@ -225,19 +177,6 @@ Integrates the baud rate generator, UART transmitter, and UART receiver into a s
 - QuestaSim
 
 ---
-
-## 📍 FPGA Pin Constraints
-
-### File: uart.xdc
-
-Example:
-```
-
-set_property PACKAGE_PIN A9 [get_ports tx]
-set_property PACKAGE_PIN B9 [get_ports rx]
-set_property IOSTANDARD LVCMOS33 [get_ports {tx rx}]
-
-```
 
 Pins must be adjusted based on the FPGA board.
 
@@ -293,14 +232,3 @@ Pins must be adjusted based on the FPGA board.
 - UART terminal software
 
 ---
-
-## 📜 License
-
-MIT License
-
----
-
-## 🤝 Contributions
-
-Fork the repository, open issues, and submit pull requests.
-```
